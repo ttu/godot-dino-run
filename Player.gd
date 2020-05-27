@@ -1,9 +1,8 @@
 extends KinematicBody2D
 
 const UP = Vector2.UP
-const SPEED = 140
-const GRAVITY = 500
-const JUMPFORCE = -400
+const GRAVITY = 2000
+const JUMPFORCE = -1000
 
 var velocity = Vector2.ZERO
 
