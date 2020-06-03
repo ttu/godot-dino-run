@@ -7,19 +7,19 @@
 [ext_resource path="res://Player.gd" type="Script" id=5]
 [ext_resource path="res://assets/player/adventurer_hang.png" type="Texture" id=6]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 34.8485
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "jump",
+"name": "hurt",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
@@ -27,9 +27,9 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "hurt",
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -41,9 +41,9 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.707092, 12.3744 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "idle"
 playing = true
