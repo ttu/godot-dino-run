@@ -71,3 +71,23 @@ position = Vector2( 156, 354 )
 position = Vector2( 512, 369 )
 z_index = -1
 texture = ExtResource( 5 )
+
+[node name="PointsLabel" type="RichTextLabel" parent="."]
+margin_left = 911.0
+margin_top = 9.0
+margin_right = 1001.0
+margin_bottom = 68.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusLabel" type="RichTextLabel" parent="."]
+margin_left = 469.0
+margin_top = 194.0
+margin_right = 611.0
+margin_bottom = 234.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

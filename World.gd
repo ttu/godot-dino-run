@@ -3,8 +3,12 @@ extends Node2D
 var enemy = load("res://Enemy.tscn");
 var timer = null
 
+var points = 0
 
 func _ready():
+	var statusLabel = get_tree().get_root().find_node("StatusLabel", true, false)
+	statusLabel.text = "GET READY"
+
 	var playerNode = get_tree().get_root().find_node("Player", true, false)
 	playerNode.connect("collision", self, "_collision")
 	
@@ -18,6 +22,12 @@ func _ready():
 	timer.start()
 	
 func _on_timer_timeout():
+	points = points + 1
+	var pointsLabel = get_tree().get_root().find_node("PointsLabel", true, false)	
+	pointsLabel.text = str(points)
+	var statusLabel = get_tree().get_root().find_node("StatusLabel", true, false)
+	statusLabel.text = ""
+	
 	var e = enemy.instance()
 	e.name = "enemy"
 	e.position = Vector2(1100, randi()%400)
@@ -28,4 +38,6 @@ func _on_timer_timeout():
 
 func _collision():
 	print("Collision")
+	points = points - 1
+	print(points)
 	#get_tree().paused = true
