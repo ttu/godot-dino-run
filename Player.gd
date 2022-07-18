@@ -4,15 +4,17 @@ signal collision
 
 const UP = Vector2.UP
 const GRAVITY = 2000
-const JUMPFORCE = -1000
+const JUMPFORCE = -800
 
 var velocity = Vector2.ZERO
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		velocity.y = JUMPFORCE
-	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
 		velocity.y = JUMPFORCE * 2
+	if Input.is_key_pressed(KEY_RIGHT) and is_on_floor():
+		velocity.x = velocity.x + 10
+	if Input.is_key_pressed(KEY_LEFT) and is_on_floor():
+		velocity.x = velocity.x - 10
 	else:
 		velocity.y += GRAVITY * delta
 	
